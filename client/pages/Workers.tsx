@@ -42,7 +42,7 @@ export default function Workers() {
   const [workerName, setWorkerName] = useState("");
   const [workerId, setWorkerId] = useState("");
   const [age, setAge] = useState<number | "">("");
-  const [totalHoursWorked, setTotalHoursWorked] = useState<number | "">("");
+  const [recommendedHours, setRecommendedHours] = useState<number | null>(null);
   const [date, setDate] = useState(() => {
     const today = new Date();
     return today.toISOString().split("T")[0];
@@ -61,6 +61,40 @@ export default function Workers() {
   const [workers, setWorkers] = useState<WorkerHealthEntry[]>([]);
   const [showHistory, setShowHistory] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  const calculateRecommendedHours = (ageValue: number | "", conditions: string[]): number | null => {
+    if (!ageValue) return null;
+
+    let limit = 10;
+
+    // Rule 1: Age > 50 reduces limit to 8 hours
+    if (ageValue > 50) {
+      limit = 8;
+    }
+
+    // Rule 2: Critical health conditions reduce limit to 6 hours
+    const hasCriticalCondition = conditions.some((condition) =>
+      ["Heart Condition", "High Blood Pressure", "Respiratory Issues"].includes(condition)
+    );
+    if (hasCriticalCondition) {
+      limit = 6;
+    }
+
+    // Rule 3: Physical health conditions cap limit at 7 hours (strictest limit via Math.min)
+    const hasPhysicalCondition = conditions.some((condition) =>
+      ["Back Problems", "Knee/Joint Issues"].includes(condition)
+    );
+    if (hasPhysicalCondition) {
+      limit = Math.min(limit, 7);
+    }
+
+    return limit;
+  };
+
+  useEffect(() => {
+    const hours = calculateRecommendedHours(age, selectedConditions);
+    setRecommendedHours(hours);
+  }, [age, selectedConditions]);
 
   // Fetch worker health history
   const fetchWorkers = useCallback(async () => {
@@ -115,10 +149,11 @@ export default function Workers() {
       e.preventDefault();
 
       // Validate required fields
-      if (!workerName || !workerId || !age || totalHoursWorked === "" || !siteLocation || !supervisorName) {
+      if (!workerName || !workerId || !age || !siteLocation || !supervisorName) {
         setSubmitStatus({
           type: "error",
-          message: "Please fill in all required fields (Worker Name, Worker ID, Age, Total Hours Worked, Site Location, Supervisor Name)",
+          message:
+            "Please fill in all required fields (Worker Name, Worker ID, Age, Site Location, Supervisor Name)",
         });
         return;
       }
@@ -140,7 +175,7 @@ export default function Workers() {
           workerName,
           workerId,
           age: Number(age),
-          totalHoursWorked: Number(totalHoursWorked),
+          totalHoursWorked: recommendedHours ?? 0,
           date,
           siteLocation,
           supervisorName,
@@ -157,7 +192,7 @@ export default function Workers() {
           worker_id: workerId,
           worker_name: workerName,
           age: Number(age),
-          total_hours_worked: Number(totalHoursWorked),
+          total_hours_worked: recommendedHours ?? 0,
           health_conditions: selectedConditions,
           medications: medications || "",
         };
@@ -265,7 +300,7 @@ export default function Workers() {
           setWorkerName("");
           setWorkerId("");
           setAge("");
-          setTotalHoursWorked("");
+          setRecommendedHours(null);
           setDate(() => {
             const today = new Date();
             return today.toISOString().split("T")[0];
@@ -307,7 +342,6 @@ export default function Workers() {
       workerName,
       workerId,
       age,
-      totalHoursWorked,
       date,
       siteLocation,
       supervisorName,
@@ -420,23 +454,6 @@ export default function Workers() {
                         placeholder="Enter worker age"
                         min="18"
                         max="100"
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-white font-semibold mb-3 flex items-center gap-2">
-                        <Clock className="w-5 h-5 text-neon-orange" />
-                        Total Hours Worked *
-                      </label>
-                      <input
-                        type="number"
-                        value={totalHoursWorked}
-                        onChange={(e) => setTotalHoursWorked(e.target.value === "" ? "" : Number(e.target.value))}
-                        placeholder="Enter total hours worked"
-                        min="0"
-                        step="0.5"
                         className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
                         required
                       />
@@ -637,6 +654,25 @@ export default function Workers() {
                     />
                   </div>
                 </div>
+
+                {/* System Verdict - AI Recommended Shift Duration */}
+                {recommendedHours !== null && (
+                  <div className="mt-6 rounded-xl border border-neon-orange/60 bg-neon-orange/10 px-5 py-4 flex items-center gap-4 shadow-[0_0_25px_rgba(251,146,60,0.45)]">
+                    <CheckCircle className="w-6 h-6 text-neon-orange flex-shrink-0" />
+                    <div>
+                      <p className="text-xs uppercase tracking-wide text-neon-orange/80 mb-1">
+                        System Verdict
+                      </p>
+                      <p className="text-sm text-gray-200">
+                        AI Recommended Shift Duration:{" "}
+                        <span className="font-mono text-lg text-neon-orange">
+                          {recommendedHours}
+                        </span>{" "}
+                        Hours
+                      </p>
+                    </div>
+                  </div>
+                )}
 
                 {/* Submit Status Message */}
                 {submitStatus && (

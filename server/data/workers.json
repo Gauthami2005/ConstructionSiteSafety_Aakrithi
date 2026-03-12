@@ -327,5 +327,66 @@
       "Stop work immediately and initiate medical check.",
       "Notify supervisor and emergency contact."
     ]
+  },
+  {
+    "id": "worker-1773342217528-1730vr",
+    "workerName": "dhu",
+    "workerId": "3",
+    "age": 40,
+    "totalHoursWorked": 10,
+    "date": "2026-03-12",
+    "siteLocation": "parkala",
+    "supervisorName": "hema",
+    "healthConditions": [
+      "Knee/Joint Issues"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2026-03-12T19:03:37.528Z",
+    "riskScore": 36,
+    "alertLevel": "ok",
+    "riskReasons": [
+      "Age (40) contributes 10 pts",
+      "Hours worked (10h) contributes 20 pts",
+      "1 health condition(s) apply multiplier x1.20"
+    ],
+    "recommendedActions": [
+      "Maintain hydration and standard rest schedule."
+    ]
+  },
+  {
+    "id": "worker-1773342304505-pdzp69",
+    "workerName": "hema",
+    "workerId": "123",
+    "age": 20,
+    "totalHoursWorked": 6,
+    "date": "2026-03-12",
+    "siteLocation": "udupi",
+    "supervisorName": "neema",
+    "healthConditions": [
+      "Asthma",
+      "Heart Condition",
+      "Back Problems",
+      "Knee/Joint Issues"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2026-03-12T19:05:04.505Z",
+    "riskScore": 24,
+    "alertLevel": "ok",
+    "riskReasons": [
+      "Age (20) contributes 5 pts",
+      "Hours worked (6h) contributes 10 pts",
+      "4 health condition(s) apply multiplier x1.60"
+    ],
+    "recommendedActions": [
+      "Maintain hydration and standard rest schedule."
+    ]
   }
 ]
