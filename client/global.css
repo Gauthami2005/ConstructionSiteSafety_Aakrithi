@@ -1,0 +1,194 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme for SiteGuard AI
+   * Dark futuristic dashboard with neon accents
+   */
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 13% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 13% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 39 100% 40%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 220 13% 20%;
+    --muted-foreground: 220 13% 60%;
+
+    --accent: 39 100% 40%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 15%;
+    --input: 220 13% 10%;
+    --ring: 39 100% 40%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 39 100% 40%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 180 100% 50%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 220 13% 15%;
+    --sidebar-ring: 39 100% 40%;
+
+    --neon-orange: 39 100% 40%;
+    --neon-green: 90 100% 50%;
+    --neon-cyan: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+  }
+
+  :where(p, span, li, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .glow-neon-orange {
+    @apply shadow-[0_0_20px_rgba(255,122,0,0.5)];
+  }
+
+  .glow-neon-green {
+    @apply shadow-[0_0_20px_rgba(57,255,20,0.5)];
+  }
+
+  .glow-neon-cyan {
+    @apply shadow-[0_0_20px_rgba(0,255,255,0.5)];
+  }
+
+  .glow-strong-orange {
+    @apply shadow-[0_0_40px_rgba(255,122,0,0.7)];
+  }
+
+  /* Sidebar nav item active state */
+  .sidebar-nav-item.active {
+    @apply text-white;
+  }
+
+  .sidebar-nav-item.active .animate-glow-pulse {
+    /* keep existing pulse animation */
+  }
+
+  .sidebar-nav-item.active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,122,0,0.12), transparent 60%);
+    z-index: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 30px rgba(255,122,0,0.28);
+  }
+
+  .sidebar-nav-item .z-10 {
+    z-index: 10;
+  }
+
+  .glass-card {
+    @apply bg-white bg-opacity-5 backdrop-blur-md border border-white border-opacity-10 rounded-2xl;
+  }
+
+  .glass-card-sm {
+    @apply bg-white bg-opacity-5 backdrop-blur-md border border-white border-opacity-10 rounded-xl;
+  }
+
+  /* Pulsating glow for Start Live Analysis button */
+  @keyframes pulsate-glow {
+    0% {
+      box-shadow: 0 8px 20px rgba(0, 188, 212, 0.06), 0 0 0 0px rgba(0,188,212,0.0);
+    }
+    100% {
+      box-shadow: 0 10px 30px rgba(0, 188, 212, 0.16), 0 0 20px 4px rgba(0,188,212,0.12);
+    }
+  }
+
+  .pulsate-glow {
+    /* base soft shadow + animated pulse */
+    box-shadow: 0 8px 24px rgba(0,188,212,0.12);
+    animation: pulsate-glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 122, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 122, 0, 0.8);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.4s ease-out;
+  }
+}

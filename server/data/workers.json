@@ -1,0 +1,331 @@
+[
+  {
+    "id": "worker-1762450855397-hsiivx",
+    "workerName": "Raj",
+    "workerId": "01",
+    "date": "2025-11-06",
+    "siteLocation": "Udupi",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "High Blood Pressure"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-06T17:40:55.397Z"
+  },
+  {
+    "id": "worker-1762454364699-xjm01",
+    "workerName": "Rajesh Singh",
+    "workerId": "W104",
+    "age": 47,
+    "totalHoursWorked": 11,
+    "date": "2025-11-06",
+    "siteLocation": "Udupi",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Vision Problems",
+      "Back Problems"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-06T18:39:24.699Z"
+  },
+  {
+    "id": "worker-1762454617196-s8w1jl",
+    "workerName": "02",
+    "workerId": "Rajesh",
+    "age": 58,
+    "totalHoursWorked": 13,
+    "date": "2025-11-06",
+    "siteLocation": "Udupi",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Heart Condition",
+      "Diabetes"
+    ],
+    "medications": "Insulin, blood pressure tablets",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-06T18:43:37.196Z"
+  },
+  {
+    "id": "worker-1762455180703-zamfll",
+    "workerName": "Ram",
+    "workerId": "03",
+    "age": 35,
+    "totalHoursWorked": 9.5,
+    "date": "2025-11-06",
+    "siteLocation": "Udupi",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Asthma"
+    ],
+    "medications": "Inhaler (as needed)",
+    "allergies": "Dust sensitivity",
+    "emergencyContact": "Meena Patel",
+    "emergencyPhone": "9998822344",
+    "notes": "Reported mild shortness of breath after working near concrete dust zone",
+    "createdAt": "2025-11-06T18:53:00.703Z"
+  },
+  {
+    "id": "worker-1762455327867-tfd7rc",
+    "workerName": "Amit",
+    "workerId": "04",
+    "age": 50,
+    "totalHoursWorked": 12,
+    "date": "2025-11-06",
+    "siteLocation": "Mangalore",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Heart Condition"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-06T18:55:27.867Z"
+  },
+  {
+    "id": "worker-1762455537807-jggcb",
+    "workerName": "Man",
+    "workerId": "5",
+    "age": 55,
+    "totalHoursWorked": 10,
+    "date": "2025-11-06",
+    "siteLocation": "Mangalore",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Heart Condition"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-06T18:58:57.807Z"
+  },
+  {
+    "id": "worker-1762455600740-3qrkq",
+    "workerName": "Rohan",
+    "workerId": "6",
+    "age": 55,
+    "totalHoursWorked": 12,
+    "date": "2025-11-06",
+    "siteLocation": "Bangalore",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "High Blood Pressure"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-06T19:00:00.740Z"
+  },
+  {
+    "id": "worker-1762455777816-qqh6ae",
+    "workerName": "Woman",
+    "workerId": "10",
+    "age": 25,
+    "totalHoursWorked": 10,
+    "date": "2025-11-06",
+    "siteLocation": "Goa",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "None"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-06T19:02:57.816Z"
+  },
+  {
+    "id": "worker-1762462538851-zf7mjc",
+    "workerName": "Tim",
+    "workerId": "15",
+    "age": 20,
+    "totalHoursWorked": 8,
+    "date": "2025-11-06",
+    "siteLocation": "Delhi",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "None"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-06T20:55:38.851Z",
+    "riskScore": 0,
+    "alertLevel": "ok",
+    "riskReasons": [
+      "No health conditions - 1.0x multiplier"
+    ],
+    "recommendedActions": [
+      "Maintain hydration and standard rest schedule."
+    ]
+  },
+  {
+    "id": "worker-1762515053647-ot2lb4",
+    "workerName": "Appu",
+    "workerId": "20",
+    "age": 60,
+    "totalHoursWorked": 10,
+    "date": "2025-11-07",
+    "siteLocation": "Bengaluru",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "High Blood Pressure"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-07T11:30:53.647Z",
+    "riskScore": 45,
+    "alertLevel": "watch",
+    "riskReasons": [
+      "Age (60 years) contributes 23 risk points",
+      "Extended work hours (10h) contributes 15 risk points",
+      "1 health condition(s) apply 1.20x multiplier"
+    ],
+    "recommendedActions": [
+      "Add 15-minute rest and verify hydration.",
+      "Supervisor review at shift end."
+    ]
+  },
+  {
+    "id": "worker-1762515935511-hrj9sg",
+    "workerName": "Aruna",
+    "workerId": "25",
+    "age": 28,
+    "totalHoursWorked": 7,
+    "date": "2025-11-07",
+    "siteLocation": "Kolkata",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "None"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-07T11:45:35.511Z",
+    "riskScore": 15,
+    "alertLevel": "ok",
+    "riskReasons": [
+      "Age (28) contributes 5 pts",
+      "Hours worked (7h) contributes 10 pts",
+      "No health conditions - multiplier x1.00"
+    ],
+    "recommendedActions": [
+      "Maintain hydration and standard rest schedule."
+    ]
+  },
+  {
+    "id": "worker-1762515971195-sa4xen",
+    "workerName": "Vikram",
+    "workerId": "50",
+    "age": 37,
+    "totalHoursWorked": 9.5,
+    "date": "2025-11-07",
+    "siteLocation": "Delhi",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Asthma"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-07T11:46:11.195Z",
+    "riskScore": 36,
+    "alertLevel": "ok",
+    "riskReasons": [
+      "Age (37) contributes 10 pts",
+      "Hours worked (9.5h) contributes 20 pts",
+      "1 health condition(s) apply multiplier x1.20"
+    ],
+    "recommendedActions": [
+      "Maintain hydration and standard rest schedule."
+    ]
+  },
+  {
+    "id": "worker-1762516027968-eq8py",
+    "workerName": "Jay",
+    "workerId": "100",
+    "age": 49,
+    "totalHoursWorked": 11,
+    "date": "2025-11-07",
+    "siteLocation": "Pondicherry",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Back Problems",
+      "Vision Problems"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-07T11:47:07.968Z",
+    "riskScore": 63,
+    "alertLevel": "warning",
+    "riskReasons": [
+      "Age (49) contributes 15 pts",
+      "Hours worked (11h) contributes 30 pts",
+      "2 health condition(s) apply multiplier x1.40"
+    ],
+    "recommendedActions": [
+      "Require 30-minute rest and reduced physical tasks.",
+      "Supervisor to adjust next shift workload."
+    ]
+  },
+  {
+    "id": "worker-1762516093557-1wzzq",
+    "workerName": "Nihal",
+    "workerId": "101",
+    "age": 58,
+    "totalHoursWorked": 13,
+    "date": "2025-11-07",
+    "siteLocation": "MP",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Heart Condition",
+      "Diabetes"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2025-11-07T11:48:13.557Z",
+    "riskScore": 84,
+    "alertLevel": "critical",
+    "riskReasons": [
+      "Age (58) contributes 20 pts",
+      "Hours worked (13h) contributes 40 pts",
+      "2 health condition(s) apply multiplier x1.40"
+    ],
+    "recommendedActions": [
+      "Stop work immediately and initiate medical check.",
+      "Notify supervisor and emergency contact."
+    ]
+  }
+]
