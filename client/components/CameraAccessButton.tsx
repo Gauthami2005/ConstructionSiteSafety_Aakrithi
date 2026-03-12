@@ -55,7 +55,11 @@ export default function CameraAccessButton(): JSX.Element {
   };
 
   const handleDeviceChange = (id: string, deviceId: string) => {
+    // Find the device index in the current devices list
     const deviceIndex = devices.findIndex(d => d.deviceId === deviceId);
+    
+    // We want the PHYSICAL index in the OS list, which matches how cv2.VideoCapture works
+    // Browsers often randomize deviceId but usually keep order consistent in enumerateDevices
     updateCameraState(id, { 
       deviceId, 
       source: deviceIndex >= 0 ? deviceIndex.toString() : "0" 
@@ -64,15 +68,23 @@ export default function CameraAccessButton(): JSX.Element {
 
   const startAnalysis = async (id: string, source: string) => {
     try {
-      updateCameraState(id, { isLoading: true });
+      updateCameraState(id, { isLoading: true, analysisResult: "Initializing AI..." });
       const resp = await fetch(`/api/ml/start-webcam?source=${source}`);
       const data = await resp.json();
-      updateCameraState(id, { 
-        isMLRunning: true, 
-        analysisResult: data?.message || "AI Analysis started" 
-      });
+      
+      if (resp.ok && data.started) {
+        updateCameraState(id, { 
+          isMLRunning: true, 
+          analysisResult: "AI Live Monitoring Active" 
+        });
+      } else {
+        updateCameraState(id, { 
+          isMLRunning: false, 
+          analysisResult: `Error: ${data.error || "Could not start camera"}` 
+        });
+      }
     } catch (err) {
-      updateCameraState(id, { analysisResult: String(err) });
+      updateCameraState(id, { analysisResult: `Connection failed: ${String(err)}` });
     } finally {
       updateCameraState(id, { isLoading: false });
     }

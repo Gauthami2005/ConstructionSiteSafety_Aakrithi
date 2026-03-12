@@ -388,5 +388,34 @@
     "recommendedActions": [
       "Maintain hydration and standard rest schedule."
     ]
+  },
+  {
+    "id": "worker-1773340959583-p1i1do",
+    "workerName": "yash",
+    "workerId": "1",
+    "age": 55,
+    "totalHoursWorked": 6,
+    "date": "2026-03-12",
+    "siteLocation": "Udupi",
+    "supervisorName": "dhruva",
+    "healthConditions": [
+      "High Blood Pressure"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2026-03-12T18:42:39.583Z",
+    "riskScore": 36,
+    "alertLevel": "ok",
+    "riskReasons": [
+      "Age (55) contributes 20 pts",
+      "Hours worked (6h) contributes 10 pts",
+      "1 health condition(s) apply multiplier x1.20"
+    ],
+    "recommendedActions": [
+      "Maintain hydration and standard rest schedule."
+    ]
   }
 ]

@@ -58,42 +58,58 @@ export default function Workers() {
   const [notes, setNotes] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [recommendationReport, setRecommendationReport] = useState<{
+    hours: number;
+    fatigueScore: number;
+    workerName: string;
+  } | null>(null);
   const [workers, setWorkers] = useState<WorkerHealthEntry[]>([]);
   const [showHistory, setShowHistory] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const calculateRecommendedHours = (ageValue: number | "", conditions: string[]): number | null => {
-    if (!ageValue) return null;
+  const calculateSafeLimit = (ageValue: number, conditions: string[]) => {
+    let limit = 10; // Base
 
-    let limit = 10;
-
-    // Rule 1: Age > 50 reduces limit to 8 hours
     if (ageValue > 50) {
       limit = 8;
     }
 
-    // Rule 2: Critical health conditions reduce limit to 6 hours
-    const hasCriticalCondition = conditions.some((condition) =>
-      ["Heart Condition", "High Blood Pressure", "Respiratory Issues"].includes(condition)
-    );
-    if (hasCriticalCondition) {
+    const criticalConditions = ["Heart Condition", "High Blood Pressure", "Respiratory Issues"];
+    const hasCritical = conditions.some(c => criticalConditions.includes(c));
+    if (hasCritical) {
       limit = 6;
     }
 
-    // Rule 3: Physical health conditions cap limit at 7 hours (strictest limit via Math.min)
-    const hasPhysicalCondition = conditions.some((condition) =>
-      ["Back Problems", "Knee/Joint Issues"].includes(condition)
-    );
-    if (hasPhysicalCondition) {
+    const physicalConditions = ["Back Problems", "Knee/Joint Issues"];
+    const hasPhysical = conditions.some(c => physicalConditions.includes(c));
+    if (hasPhysical) {
       limit = Math.min(limit, 7);
     }
 
     return limit;
   };
 
+  const calculateFatigueScore = (ageValue: number, conditions: string[]) => {
+    let score = 0;
+    if (ageValue > 50) score += 20;
+
+    const criticalConditions = ["Heart Condition", "High Blood Pressure", "Respiratory Issues"];
+    conditions.forEach(c => {
+      if (criticalConditions.includes(c)) {
+        score += 25;
+      }
+    });
+
+    return Math.min(score, 100);
+  };
+
   useEffect(() => {
-    const hours = calculateRecommendedHours(age, selectedConditions);
-    setRecommendedHours(hours);
+    if (age !== "") {
+      const hours = calculateSafeLimit(Number(age), selectedConditions);
+      setRecommendedHours(hours);
+    } else {
+      setRecommendedHours(null);
+    }
   }, [age, selectedConditions]);
 
   // Fetch worker health history
@@ -152,8 +168,7 @@ export default function Workers() {
       if (!workerName || !workerId || !age || !siteLocation || !supervisorName) {
         setSubmitStatus({
           type: "error",
-          message:
-            "Please fill in all required fields (Worker Name, Worker ID, Age, Site Location, Supervisor Name)",
+          message: "Please fill in all required fields (Worker Name, Worker ID, Age, Site Location, Supervisor Name)",
         });
         return;
       }
@@ -170,12 +185,15 @@ export default function Workers() {
       setSubmitStatus(null);
 
       try {
+        const safeLimit = calculateSafeLimit(Number(age), selectedConditions);
+        const fatigueScore = calculateFatigueScore(Number(age), selectedConditions);
+
         // Step 1: Prepare worker data
         const workerData: WorkerHealthRequest = {
           workerName,
           workerId,
           age: Number(age),
-          totalHoursWorked: recommendedHours ?? 0,
+          totalHoursWorked: safeLimit, // Use calculated limit as the reference hours
           date,
           siteLocation,
           supervisorName,
@@ -192,7 +210,7 @@ export default function Workers() {
           worker_id: workerId,
           worker_name: workerName,
           age: Number(age),
-          total_hours_worked: recommendedHours ?? 0,
+          total_hours_worked: safeLimit,
           health_conditions: selectedConditions,
           medications: medications || "",
         };
@@ -258,12 +276,9 @@ export default function Workers() {
           cancelable: true
         });
         
-        // Dispatch on both window and document for better compatibility
-        // Use capture phase to ensure it's caught
         window.dispatchEvent(event);
         document.dispatchEvent(event);
         
-        // Also try dispatching with a small delay to ensure listeners are ready
         setTimeout(() => {
           window.dispatchEvent(event);
           document.dispatchEvent(event);
@@ -291,12 +306,19 @@ export default function Workers() {
         const result: WorkerHealthResponse = await response.json();
 
         if (result.success) {
-          setSubmitStatus({
-            type: "success",
-            message: `Worker health record saved successfully! Risk Score: ${riskResult.score}/100 (${riskResult.alert_level.toUpperCase()})`,
+          // Show Recommendation Report
+          setRecommendationReport({
+            hours: safeLimit,
+            fatigueScore: fatigueScore,
+            workerName: workerName,
           });
 
-          // Reset form
+          setSubmitStatus({
+            type: "success",
+            message: `Worker health record saved successfully!`,
+          });
+
+          // Reset form fields but not recommendationReport
           setWorkerName("");
           setWorkerId("");
           setAge("");
@@ -317,11 +339,6 @@ export default function Workers() {
 
           // Refresh workers list
           fetchWorkers();
-
-          // Clear success message after 5 seconds
-          setTimeout(() => {
-            setSubmitStatus(null);
-          }, 5000);
         } else {
           setSubmitStatus({
             type: "error",
@@ -401,109 +418,187 @@ export default function Workers() {
           </div>
 
           {!showHistory ? (
-            /* Add Worker Health Form */
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="glass-card p-8 animate-fade-in">
-                {/* Worker Information */}
-                <div className="space-y-6 mb-8">
-                  <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                    <UserCircle className="w-6 h-6 text-neon-orange" />
-                    Worker Information
-                  </h2>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-semibold mb-3 flex items-center gap-2">
-                        <User className="w-5 h-5 text-neon-orange" />
-                        Worker Name *
-                      </label>
-                      <input
-                        type="text"
-                        value={workerName}
-                        onChange={(e) => setWorkerName(e.target.value)}
-                        placeholder="Enter worker name"
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
-                        required
-                      />
+            /* Add Worker Health Form or Recommendation Report */
+            recommendationReport ? (
+              <div className="glass-card p-12 animate-fade-in border-white/10 border relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-neon-orange/5 blur-3xl -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-neon-cyan/5 blur-3xl -z-10"></div>
+                
+                <div className="text-center space-y-8">
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="w-20 h-20 rounded-full bg-neon-orange/10 flex items-center justify-center border border-neon-orange/20">
+                      {recommendationReport.hours <= 6 ? (
+                        <AlertTriangle className="w-10 h-10 text-neon-orange" />
+                      ) : (
+                        <FileText className="w-10 h-10 text-neon-orange" />
+                      )}
                     </div>
-
                     <div>
-                      <label className="block text-white font-semibold mb-3 flex items-center gap-2">
-                        <User className="w-5 h-5 text-neon-orange" />
-                        Worker ID *
-                      </label>
-                      <input
-                        type="text"
-                        value={workerId}
-                        onChange={(e) => setWorkerId(e.target.value)}
-                        placeholder="Enter worker ID"
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-white font-semibold mb-3 flex items-center gap-2">
-                        <UserCircle className="w-5 h-5 text-neon-orange" />
-                        Age *
-                      </label>
-                      <input
-                        type="number"
-                        value={age}
-                        onChange={(e) => setAge(e.target.value === "" ? "" : Number(e.target.value))}
-                        placeholder="Enter worker age"
-                        min="18"
-                        max="100"
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-white font-semibold mb-3 flex items-center gap-2">
-                        <Calendar className="w-5 h-5 text-neon-orange" />
-                        Date *
-                      </label>
-                      <input
-                        type="date"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-white font-semibold mb-3 flex items-center gap-2">
-                        <MapPin className="w-5 h-5 text-neon-orange" />
-                        Site Location *
-                      </label>
-                      <input
-                        type="text"
-                        value={siteLocation}
-                        onChange={(e) => setSiteLocation(e.target.value)}
-                        placeholder="Enter site location"
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-white font-semibold mb-3 flex items-center gap-2">
-                        <User className="w-5 h-5 text-neon-orange" />
-                        Supervisor Name *
-                      </label>
-                      <input
-                        type="text"
-                        value={supervisorName}
-                        onChange={(e) => setSupervisorName(e.target.value)}
-                        placeholder="Enter supervisor name"
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
-                        required
-                      />
+                      <h2 className="text-3xl font-bold text-white tracking-tight">Safety Recommendation Report</h2>
+                      <p className="text-gray-400 mt-1 uppercase tracking-widest text-xs font-bold">SiteGuard AI Analysis</p>
                     </div>
                   </div>
+
+                  <div className="py-8 px-6 rounded-2xl bg-white/5 border border-white/10 space-y-6">
+                    <div className="space-y-2">
+                      <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">Analysis for {recommendationReport.workerName}</p>
+                      <h3 className="text-4xl lg:text-5xl font-black text-neon-orange drop-shadow-[0_0_15px_rgba(255,94,0,0.3)]">
+                        System Recommended Shift: {recommendationReport.hours} Hours Max
+                      </h3>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-2 pt-4 border-t border-white/5">
+                      <p className="text-gray-400 text-sm font-semibold">Fatigue Sensitivity Score</p>
+                      <div className="w-full max-w-md h-3 bg-white/5 rounded-full overflow-hidden border border-white/10">
+                        <div 
+                          className={`h-full transition-all duration-1000 ${
+                            recommendationReport.fatigueScore > 70 ? 'bg-red-500' : 
+                            recommendationReport.fatigueScore > 40 ? 'bg-amber-500' : 'bg-neon-green'
+                          }`}
+                          style={{ width: `${recommendationReport.fatigueScore}%` }}
+                        ></div>
+                      </div>
+                      <span className={`text-2xl font-bold ${
+                        recommendationReport.fatigueScore > 70 ? 'text-red-500' : 
+                        recommendationReport.fatigueScore > 40 ? 'text-amber-500' : 'text-neon-green'
+                      }`}>
+                        {recommendationReport.fatigueScore}/100
+                      </span>
+                    </div>
+                  </div>
+
+                  {recommendationReport.hours <= 6 && (
+                    <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-neon-orange/10 border border-neon-orange/20 text-neon-orange">
+                      <AlertTriangle className="w-6 h-6 animate-pulse" />
+                      <p className="font-bold text-sm uppercase tracking-wider">CRITICAL: High-risk conditions detected. Reduced shift mandatory.</p>
+                    </div>
+                  )}
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                    <button
+                      onClick={() => setRecommendationReport(null)}
+                      className="px-8 py-4 rounded-xl font-bold bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex items-center justify-center gap-2"
+                    >
+                      <Plus className="w-5 h-5" />
+                      Add Another Worker
+                    </button>
+                    <button
+                      onClick={() => {
+                        setRecommendationReport(null);
+                        setShowHistory(true);
+                      }}
+                      className="px-8 py-4 rounded-xl font-bold bg-gradient-to-r from-neon-orange to-amber-600 text-black hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,94,0,0.2)] flex items-center justify-center gap-2"
+                    >
+                      <CheckCircle className="w-5 h-5" />
+                      Finalize & View Records
+                    </button>
+                  </div>
                 </div>
+              </div>
+            ) : (
+              /* Add Worker Health Form */
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="glass-card p-8 animate-fade-in">
+                  {/* Worker Information */}
+                  <div className="space-y-6 mb-8">
+                    <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                      <UserCircle className="w-6 h-6 text-neon-orange" />
+                      Worker Information
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-white font-semibold mb-3 flex items-center gap-2">
+                          <User className="w-5 h-5 text-neon-orange" />
+                          Worker Name *
+                        </label>
+                        <input
+                          type="text"
+                          value={workerName}
+                          onChange={(e) => setWorkerName(e.target.value)}
+                          placeholder="Enter worker name"
+                          className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-white font-semibold mb-3 flex items-center gap-2">
+                          <User className="w-5 h-5 text-neon-orange" />
+                          Worker ID *
+                        </label>
+                        <input
+                          type="text"
+                          value={workerId}
+                          onChange={(e) => setWorkerId(e.target.value)}
+                          placeholder="Enter worker ID"
+                          className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-white font-semibold mb-3 flex items-center gap-2">
+                          <UserCircle className="w-5 h-5 text-neon-orange" />
+                          Age *
+                        </label>
+                        <input
+                          type="number"
+                          value={age}
+                          onChange={(e) => setAge(e.target.value === "" ? "" : Number(e.target.value))}
+                          placeholder="Enter worker age"
+                          min="18"
+                          max="100"
+                          className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-white font-semibold mb-3 flex items-center gap-2">
+                          <Calendar className="w-5 h-5 text-neon-orange" />
+                          Date *
+                        </label>
+                        <input
+                          type="date"
+                          value={date}
+                          onChange={(e) => setDate(e.target.value)}
+                          className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-white font-semibold mb-3 flex items-center gap-2">
+                          <MapPin className="w-5 h-5 text-neon-orange" />
+                          Site Location *
+                        </label>
+                        <input
+                          type="text"
+                          value={siteLocation}
+                          onChange={(e) => setSiteLocation(e.target.value)}
+                          placeholder="Enter site location"
+                          className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-white font-semibold mb-3 flex items-center gap-2">
+                          <User className="w-5 h-5 text-neon-orange" />
+                          Supervisor Name *
+                        </label>
+                        <input
+                          type="text"
+                          value={supervisorName}
+                          onChange={(e) => setSupervisorName(e.target.value)}
+                          placeholder="Enter supervisor name"
+                          className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-neon-orange focus:ring-2 focus:ring-neon-orange/20 focus:outline-none transition-all duration-300 hover:border-white/20"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
 
                 {/* Health Conditions */}
                 <div className="space-y-6 mb-8">
@@ -723,9 +818,10 @@ export default function Workers() {
                 </div>
               </div>
             </form>
-          ) : (
-            /* Worker Health History */
-            <div className="glass-card p-8 animate-fade-in">
+          )
+        ) : (
+          /* Worker Health History */
+          <div className="glass-card p-8 animate-fade-in">
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <Users className="w-6 h-6 text-neon-orange" />
                 Worker Health History
