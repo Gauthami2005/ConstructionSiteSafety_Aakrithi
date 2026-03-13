@@ -417,5 +417,34 @@
     "recommendedActions": [
       "Maintain hydration and standard rest schedule."
     ]
+  },
+  {
+    "id": "worker-1773362521004-c6z6sc",
+    "workerName": "Raj",
+    "workerId": "10",
+    "age": 49,
+    "totalHoursWorked": 6,
+    "date": "2026-03-13",
+    "siteLocation": "Bangalore",
+    "supervisorName": "Dhruva",
+    "healthConditions": [
+      "Heart Condition"
+    ],
+    "medications": "",
+    "allergies": "",
+    "emergencyContact": "",
+    "emergencyPhone": "",
+    "notes": "",
+    "createdAt": "2026-03-13T00:42:01.004Z",
+    "riskScore": 30,
+    "alertLevel": "ok",
+    "riskReasons": [
+      "Age (49) contributes 15 pts",
+      "Hours worked (6h) contributes 10 pts",
+      "1 health condition(s) apply multiplier x1.20"
+    ],
+    "recommendedActions": [
+      "Maintain hydration and standard rest schedule."
+    ]
   }
 ]

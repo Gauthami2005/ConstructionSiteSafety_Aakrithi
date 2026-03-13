@@ -111,5 +111,24 @@
       }
     ],
     "createdAt": "2025-11-07T11:27:55.496Z"
+  },
+  {
+    "id": "upload-1773362318038-9neqp",
+    "constructionType": "residential",
+    "siteLocation": "Bangalore",
+    "supervisorName": "Dhruva",
+    "uploadDate": "2026-03-13",
+    "notes": "",
+    "files": [
+      {
+        "id": "file-1773362318054-0",
+        "name": "images.jpeg",
+        "size": 12822,
+        "type": "image/jpeg",
+        "path": "uploads/upload-1773362318038-9neqp/images-1773362318039-961d6.jpeg",
+        "absolutePath": "/Users/dhruvashedbalkar/Desktop/Sahyadri/ConstructionSiteRiskSafety/server/data/uploads/upload-1773362318038-9neqp/images-1773362318039-961d6.jpeg"
+      }
+    ],
+    "createdAt": "2026-03-13T00:38:38.054Z"
   }
 ]

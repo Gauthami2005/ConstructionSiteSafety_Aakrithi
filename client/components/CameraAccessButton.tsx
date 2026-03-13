@@ -16,8 +16,8 @@ interface CameraState {
 export default function CameraAccessButton(): JSX.Element {
   const [devices, setDevices] = useState<MediaDeviceInfo[]>([]);
   const [cameras, setCameras] = useState<CameraState[]>([
-    { id: "cam1", source: "0", deviceId: null, label: "Main Entrance (Camera 1)", isActive: false, isMLRunning: false, isLoading: false, analysisResult: null },
-    { id: "cam2", source: "1", deviceId: null, label: "Work Zone (Camera 2)", isActive: false, isMLRunning: false, isLoading: false, analysisResult: null }
+    { id: "cam1", source: "0", deviceId: null, label: "Phone Camera (Source 0)", isActive: false, isMLRunning: false, isLoading: false, analysisResult: null },
+    { id: "cam2", source: "2", deviceId: null, label: "Laptop Camera (Source 2)", isActive: false, isMLRunning: false, isLoading: false, analysisResult: null }
   ]);
 
   const webcamRefs = useRef<{ [key: string]: Webcam | null }>({});
@@ -32,13 +32,18 @@ export default function CameraAccessButton(): JSX.Element {
       // Auto-assign first two devices if available and not already assigned
       setCameras(prev => {
         const next = [...prev];
+        // Camera 1 -> First video device (Source 0)
         if (videoDevices.length > 0 && !next[0].deviceId) {
           next[0].deviceId = videoDevices[0].deviceId;
           next[0].source = "0";
         }
+        // Camera 2 -> Second video device if exists, otherwise first (Source 2)
         if (videoDevices.length > 1 && !next[1].deviceId) {
           next[1].deviceId = videoDevices[1].deviceId;
-          next[1].source = "1";
+          next[1].source = "2";
+        } else if (videoDevices.length > 0 && !next[1].deviceId) {
+          next[1].deviceId = videoDevices[0].deviceId;
+          next[1].source = "2";
         }
         return next;
       });

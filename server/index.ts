@@ -2,11 +2,10 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import path from "path";
-import { handleDemo } from "./routes/demo";
-import { handleSaveUpload, handleGetUploadHistory, handleGetMLImages, handleGetImagesByUploadId, handleGetUploadStats, upload } from "./routes/upload";
-import { handleSaveWorkerHealth, handleGetWorkerHealthHistory, handleGetWorkerHealthStats, handleGetAlerts } from "./routes/workers";
-import { handleGetRainySites } from "./routes/weather";
 import { handleStartWebcam, handleStopWebcam, handleGetMlAlerts } from "./routes/ml";
+import { handleSaveWorkerHealth, handleGetWorkerHealthHistory, handleGetWorkerHealthStats, handleGetAlerts } from "./routes 2/workers";
+import { handleSaveUpload, handleGetUploadHistory, handleGetUploadStats, handleGetMLImages, upload } from "./routes 2/upload";
+import { handleGetRainySites } from "./routes 2/weather";
 
 export function createServer() {
   const app = express();
@@ -26,22 +25,17 @@ export function createServer() {
     res.json({ message: ping });
   });
 
-  app.get("/api/demo", handleDemo);
-
-  // Upload routes
-  app.post("/api/upload", upload.array("files"), handleSaveUpload);
-  app.get("/api/upload/history", handleGetUploadHistory);
-  app.get("/api/upload/stats", handleGetUploadStats);
-  
-  // ML model routes - get images for training/inference
-  app.get("/api/ml/images", handleGetMLImages);
-  app.get("/api/ml/images/:uploadId", handleGetImagesByUploadId);
-
-  // Worker health routes
+  // Worker Health routes
   app.post("/api/workers", handleSaveWorkerHealth);
   app.get("/api/workers", handleGetWorkerHealthHistory);
   app.get("/api/workers/stats", handleGetWorkerHealthStats);
   app.get("/api/workers/alerts", handleGetAlerts);
+
+  // Upload routes
+  app.post("/api/upload", upload.array("images"), handleSaveUpload);
+  app.get("/api/upload", handleGetUploadHistory);
+  app.get("/api/upload/stats", handleGetUploadStats);
+  app.get("/api/upload/ml-images", handleGetMLImages);
 
   // Weather routes
   app.get("/api/weather/rainy-sites", handleGetRainySites);

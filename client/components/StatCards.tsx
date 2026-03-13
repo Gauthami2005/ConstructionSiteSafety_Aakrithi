@@ -44,8 +44,12 @@ export function StatCards() {
     const fetchUploadStats = async () => {
       try {
         const response = await fetch("/api/upload/stats");
-        const data: UploadStatsResponse = await response.json();
-        setTotalUploads(data.totalUploads);
+        const data = await response.json();
+        if (data && typeof data.totalUploads === 'number') {
+          setTotalUploads(data.totalUploads);
+        } else {
+          setTotalUploads(0);
+        }
       } catch (error) {
         console.error("Error fetching upload stats:", error);
         setTotalUploads(0);
@@ -58,7 +62,8 @@ export function StatCards() {
   }, []);
 
   // Format number with commas
-  const formatNumber = (num: number): string => {
+  const formatNumber = (num: number | undefined | null): string => {
+    if (num === undefined || num === null) return "0";
     return num.toLocaleString();
   };
 

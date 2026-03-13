@@ -33,6 +33,22 @@ PER_CLASS_MIN_CONF = {
 ALERT_CLASSES = {"no_helmet", "no_mask", "no_goggles", "no_shoes"}
 ALERT_COOLDOWN_SEC = 2.0
 
+# ---------------------------- 
+# FLOOR MAPPED RESTRICTED ZONES 
+# ---------------------------- 
+RESTRICTED_ZONES = [ 
+    { 
+        "name":"Crane Area", 
+        "coords":(200,150,500,400), 
+        "level":"danger" 
+    }, 
+    { 
+        "name":"Electrical Room", 
+        "coords":(550,100,800,350), 
+        "level":"unauthorized" 
+    } 
+] 
+
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--weights", default="weights/best.pt", help="Path to .pt weights")
@@ -61,20 +77,22 @@ def open_camera(source):
     # Try indices first if source is a number
     if str(source).isdigit():
         src_idx = int(source)
-        # Try a few common backends
-        backends = [cv2.CAP_ANY, cv2.CAP_AVFOUNDATION, cv2.CAP_V4L2, cv2.CAP_DSHOW]
-        for be in backends:
-            try:
-                cap = cv2.VideoCapture(src_idx, be)
-                if cap.isOpened():
-                    # Test read a frame to ensure it's not a "ghost" device
-                    ok, _ = cap.read()
-                    if ok:
-                        print(f"[OK] Camera {src_idx} opened with backend {be}")
-                        return cap
-                cap.release()
-            except:
-                pass
+        # Try a few common backends and fallback indices if requested fails
+        for offset in [0, 1, -1, 2, -2]:
+            idx = src_idx + offset
+            if idx < 0: continue
+            for be in [cv2.CAP_ANY, cv2.CAP_AVFOUNDATION, cv2.CAP_V4L2]:
+                try:
+                    cap = cv2.VideoCapture(idx, be)
+                    if cap.isOpened():
+                        # Test read a frame to ensure it's not a "ghost" device
+                        ok, _ = cap.read()
+                        if ok:
+                            print(f"[OK] Camera {idx} opened with backend {be}")
+                            return cap
+                    cap.release()
+                except:
+                    pass
     
     # Try as string/path
     cap = cv2.VideoCapture(source)
@@ -136,6 +154,15 @@ def main():
         )
         res = results[0]
 
+        # ---------------------------- 
+        # DRAW RESTRICTED ZONES 
+        # ---------------------------- 
+        for zone in RESTRICTED_ZONES: 
+            zx1,zy1,zx2,zy2 = zone["coords"] 
+            cv2.rectangle(frame,(zx1,zy1),(zx2,zy2),(255,0,0),2) 
+            cv2.putText(frame, zone["name"], (zx1,zy1-10), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255,0,0), 2)
+
         any_unsafe = False
         unsafe_labels_on_frame = set()
 
@@ -148,6 +175,45 @@ def main():
 
                 if conf_val < base_conf:
                     continue
+
+                # ---------------------------- 
+                # WORKER ZONE CHECK 
+                # ---------------------------- 
+                if cls_name == "person": 
+                    cx = (x1+x2)//2 
+                    cy = (y1+y2)//2 
+                    for zone in RESTRICTED_ZONES: 
+                        zx1,zy1,zx2,zy2 = zone["coords"] 
+                        if zx1 < cx < zx2 and zy1 < cy < zy2: 
+                            alert_text = f"Worker in {zone['name']}" 
+                            cv2.putText(frame, alert_text, (50,120), 
+                                        cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 3) 
+                            
+                            now = time.time()
+                            if alarm_enabled and now - last_alert.get(alert_text, 0) >= ALERT_COOLDOWN_SEC:
+                                play_beep()
+                                last_alert[alert_text] = now
+
+                            if now - last_event.get(alert_text, 0) >= ALERT_COOLDOWN_SEC:
+                                payload = {
+                                    "id": f"{int(now*1000)}-zone-{args.source}",
+                                    "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(now)),
+                                    "classes": ["unauthorized_zone"],
+                                    "primary": "unauthorized_entry",
+                                    "siteLocation": f"Camera {args.source}",
+                                    "source": args.source,
+                                    "level": "critical",
+                                    "message": alert_text,
+                                }
+                                try:
+                                    if alerts_path.exists():
+                                        data = json.loads(alerts_path.read_text(encoding="utf-8"))
+                                    else:
+                                        data = []
+                                    data.append(payload)
+                                    alerts_path.write_text(json.dumps(data[-100:], indent=2), encoding="utf-8")
+                                    last_event[alert_text] = now
+                                except: pass
 
                 is_unsafe = cls_name in UNSAFE_CLASSES
                 color = (0, 0, 255) if is_unsafe else (0, 200, 0)

@@ -1,872 +1,5 @@
 [
   {
-    "id": "1773342495613-no_glove-0",
-    "timestamp": "2026-03-12T19:08:15Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342497619-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:17Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342498022-no_glove-0",
-    "timestamp": "2026-03-12T19:08:18Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342499783-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:19Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342500378-no_glove-0",
-    "timestamp": "2026-03-12T19:08:20Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342501829-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:21Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342504018-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:24Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342504038-no_glove-0",
-    "timestamp": "2026-03-12T19:08:24Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342506212-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:26Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342506228-no_glove-0",
-    "timestamp": "2026-03-12T19:08:26Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342508384-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:28Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342508399-no_glove-0",
-    "timestamp": "2026-03-12T19:08:28Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342510564-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:30Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342511184-no_glove-0",
-    "timestamp": "2026-03-12T19:08:31Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342512598-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:32Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342513820-no_glove-0",
-    "timestamp": "2026-03-12T19:08:33Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342514627-no_goggles-0",
-    "timestamp": "2026-03-12T19:08:34Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342516296-no_glove-0",
-    "timestamp": "2026-03-12T19:08:36Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342746069-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:26Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342746810-no_glove-0",
-    "timestamp": "2026-03-12T19:12:26Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342748253-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:28Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342748913-no_glove-0",
-    "timestamp": "2026-03-12T19:12:28Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342750263-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:30Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342752346-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:32Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342752618-no_glove-0",
-    "timestamp": "2026-03-12T19:12:32Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342754380-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:34Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342755390-no_glove-0",
-    "timestamp": "2026-03-12T19:12:35Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342756463-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:36Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342757462-no_glove-0",
-    "timestamp": "2026-03-12T19:12:37Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342758643-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:38Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342759884-no_glove-0",
-    "timestamp": "2026-03-12T19:12:39Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342760803-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:40Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342761900-no_glove-0",
-    "timestamp": "2026-03-12T19:12:41Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342762974-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:42Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342763934-no_glove-0",
-    "timestamp": "2026-03-12T19:12:43Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342765125-no_goggles-0",
-    "timestamp": "2026-03-12T19:12:45Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342919595-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:19Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342921335-no_glove-1",
-    "timestamp": "2026-03-12T19:15:21Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342921662-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:21Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342923284-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:23Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342923667-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:23Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342924012-no_glove-1",
-    "timestamp": "2026-03-12T19:15:24Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342925544-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:25Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342925879-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:25Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342927841-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:27Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342928133-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:28Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342928777-no_glove-1",
-    "timestamp": "2026-03-12T19:15:28Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342929120-no_glove-0",
-    "timestamp": "2026-03-12T19:15:29Z",
-    "classes": [
-      "no_glove"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove"
-  },
-  {
-    "id": "1773342930116-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:30Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342930430-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:30Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342931132-no_glove-0",
-    "timestamp": "2026-03-12T19:15:31Z",
-    "classes": [
-      "no_glove"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove"
-  },
-  {
-    "id": "1773342931440-no_glove-1",
-    "timestamp": "2026-03-12T19:15:31Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342932129-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:32Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342932448-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:32Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342933487-no_glove-0",
-    "timestamp": "2026-03-12T19:15:33Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342934143-no_glove-1",
-    "timestamp": "2026-03-12T19:15:34Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342934142-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:34Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342934487-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:34Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342936056-no_glove-0",
-    "timestamp": "2026-03-12T19:15:36Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342936353-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:36Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342936721-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:36Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342937376-no_glove-1",
-    "timestamp": "2026-03-12T19:15:37Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342938260-no_glove-0",
-    "timestamp": "2026-03-12T19:15:38Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342938568-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:38Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342938876-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:38Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342940451-no_glove-0",
-    "timestamp": "2026-03-12T19:15:40Z",
-    "classes": [
-      "no_glove",
-      "no_goggles"
-    ],
-    "primary": "no_glove",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_glove, no_goggles"
-  },
-  {
-    "id": "1773342940775-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:40Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342941071-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:41Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342943072-no_goggles-0",
-    "timestamp": "2026-03-12T19:15:43Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 0",
-    "source": "0",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
-    "id": "1773342943092-no_goggles-1",
-    "timestamp": "2026-03-12T19:15:43Z",
-    "classes": [
-      "no_goggles"
-    ],
-    "primary": "no_goggles",
-    "siteLocation": "Camera 1",
-    "source": "1",
-    "level": "warning",
-    "message": "Unsafe: no_goggles"
-  },
-  {
     "id": "1773342944134-no_glove-0",
     "timestamp": "2026-03-12T19:15:44Z",
     "classes": [
@@ -1222,6 +355,851 @@
   {
     "id": "1773343491642-no_goggles-1",
     "timestamp": "2026-03-12T19:24:51Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773362425009-no_goggles-0",
+    "timestamp": "2026-03-13T00:40:25Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773362425871-no_glove-0",
+    "timestamp": "2026-03-13T00:40:25Z",
+    "classes": [
+      "no_glove",
+      "no_goggles"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_glove, no_goggles"
+  },
+  {
+    "id": "1773362427207-no_goggles-0",
+    "timestamp": "2026-03-13T00:40:27Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773362428205-no_glove-0",
+    "timestamp": "2026-03-13T00:40:28Z",
+    "classes": [
+      "no_glove"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_glove"
+  },
+  {
+    "id": "1773362433893-no_goggles-1",
+    "timestamp": "2026-03-13T00:40:33Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773362435979-no_goggles-1",
+    "timestamp": "2026-03-13T00:40:35Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364674958-no_goggles-0",
+    "timestamp": "2026-03-13T01:17:54Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364675397-no_glove-0",
+    "timestamp": "2026-03-13T01:17:55Z",
+    "classes": [
+      "no_glove",
+      "no_goggles"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_glove, no_goggles"
+  },
+  {
+    "id": "1773364676984-no_goggles-0",
+    "timestamp": "2026-03-13T01:17:56Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364690667-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:10Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364692692-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:12Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364694786-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:14Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364696863-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:16Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364698934-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:18Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364701080-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:21Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364703128-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:23Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364705323-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:25Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364707490-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:27Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364709535-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:29Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773364711631-no_goggles-0",
+    "timestamp": "2026-03-13T01:18:31Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365296667-fall-0",
+    "timestamp": "2026-03-13T01:28:16Z",
+    "classes": [
+      "fall"
+    ],
+    "primary": "fall",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "critical",
+    "message": "FALL DETECTED: Source 0"
+  },
+  {
+    "id": "1773365305900-fall-0",
+    "timestamp": "2026-03-13T01:28:25Z",
+    "classes": [
+      "fall"
+    ],
+    "primary": "fall",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "critical",
+    "message": "FALL DETECTED: Source 0"
+  },
+  {
+    "id": "1773365753533-no_goggles-1",
+    "timestamp": "2026-03-13T01:35:53Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365755718-no_goggles-1",
+    "timestamp": "2026-03-13T01:35:55Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365757906-no_goggles-1",
+    "timestamp": "2026-03-13T01:35:57Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365759514-no_glove-1",
+    "timestamp": "2026-03-13T01:35:59Z",
+    "classes": [
+      "no_glove"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove"
+  },
+  {
+    "id": "1773365760074-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:00Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365762199-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:02Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365764247-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:04Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365766313-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:06Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365768342-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:08Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365770535-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:10Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365772700-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:12Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365772376-fall-0",
+    "timestamp": "2026-03-13T01:36:12Z",
+    "classes": [
+      "fall"
+    ],
+    "primary": "fall",
+    "siteLocation": "Camera 0",
+    "source": "0",
+    "level": "critical",
+    "message": "FALL DETECTED: Source 0"
+  },
+  {
+    "id": "1773365774819-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:14Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365776906-no_goggles-1",
+    "timestamp": "2026-03-13T01:36:16Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365945930-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:05Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365948062-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:08Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365950212-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:10Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365952248-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:12Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365954348-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:14Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365956354-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:16Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365957517-no_glove-1",
+    "timestamp": "2026-03-13T01:39:17Z",
+    "classes": [
+      "no_glove"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove"
+  },
+  {
+    "id": "1773365958424-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:18Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365960590-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:20Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365961719-no_glove-1",
+    "timestamp": "2026-03-13T01:39:21Z",
+    "classes": [
+      "no_glove",
+      "no_goggles"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove, no_goggles"
+  },
+  {
+    "id": "1773365962687-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:22Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773365964793-no_goggles-1",
+    "timestamp": "2026-03-13T01:39:24Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366195425-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:15Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366197510-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:17Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366198525-no_glove-1",
+    "timestamp": "2026-03-13T01:43:18Z",
+    "classes": [
+      "no_glove",
+      "no_goggles"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove, no_goggles"
+  },
+  {
+    "id": "1773366199679-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:19Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366201442-no_glove-1",
+    "timestamp": "2026-03-13T01:43:21Z",
+    "classes": [
+      "no_glove"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove"
+  },
+  {
+    "id": "1773366201814-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:21Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366203632-no_glove-1",
+    "timestamp": "2026-03-13T01:43:23Z",
+    "classes": [
+      "no_glove"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove"
+  },
+  {
+    "id": "1773366203834-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:23Z",
+    "classes": [
+      "no_glove",
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove, no_goggles"
+  },
+  {
+    "id": "1773366205883-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:25Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366208055-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:28Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366210152-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:30Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366212318-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:32Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366214487-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:34Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366215782-no_glove-1",
+    "timestamp": "2026-03-13T01:43:35Z",
+    "classes": [
+      "no_glove"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove"
+  },
+  {
+    "id": "1773366216490-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:36Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366219169-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:39Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366221295-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:41Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366223296-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:43Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366225325-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:45Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366227134-no_glove-1",
+    "timestamp": "2026-03-13T01:43:47Z",
+    "classes": [
+      "no_glove"
+    ],
+    "primary": "no_glove",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_glove"
+  },
+  {
+    "id": "1773366227328-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:47Z",
+    "classes": [
+      "no_goggles"
+    ],
+    "primary": "no_goggles",
+    "siteLocation": "Camera 1",
+    "source": "1",
+    "level": "warning",
+    "message": "Unsafe: no_goggles"
+  },
+  {
+    "id": "1773366229430-no_goggles-1",
+    "timestamp": "2026-03-13T01:43:49Z",
     "classes": [
       "no_goggles"
     ],
